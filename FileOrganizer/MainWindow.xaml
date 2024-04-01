@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileOrganizer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="File Manager For Neda" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Source : " HorizontalAlignment="Left" Margin="23,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.633,-5.381"/>
+        <TextBox Height="23" Margin="84,34,136.6,0" TextWrapping="Wrap" Text="" Name="TbSourceDirectory" VerticalAlignment="Top"/>
+        <Button Name="BtnBrowseSource" Content="Browse" HorizontalAlignment="Left" Margin="675,37,0,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseSource_Click"/>
+        <Label Content="Destination : " HorizontalAlignment="Left" Margin="23,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.633,-5.381"/>
+        <TextBox Height="23" Margin="108,74,136.6,0" TextWrapping="Wrap" Text="" Name="TbDestinationDirectory" VerticalAlignment="Top"/>
+        <Button Name="BtnBrowseDes" Content="Browse" HorizontalAlignment="Left" Margin="675,77,0,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseDes_Click"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="675,122,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
+        <ProgressBar Height="20" Margin="13,226,9.6,0" VerticalAlignment="Top" Name="Pb1" RenderTransformOrigin="0.5,0.5">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.018"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Label Name="lblStatus" Content="-" HorizontalAlignment="Left" Margin="23,198,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
