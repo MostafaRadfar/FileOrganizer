@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileOrganizer"
         mc:Ignorable="d"
-        Title="File Manager For Neda" Height="450" Width="800">
+        Title="File Manager For Neda" Height="292.268" Width="769.845">
     <Grid>
         <Label Content="Source : " HorizontalAlignment="Left" Margin="23,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.633,-5.381"/>
-        <TextBox Height="23" Margin="84,34,136.6,0" TextWrapping="Wrap" Text="" Name="TbSourceDirectory" VerticalAlignment="Top"/>
-        <Button Name="BtnBrowseSource" Content="Browse" HorizontalAlignment="Left" Margin="675,37,0,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseSource_Click"/>
+        <TextBox Height="23" Margin="84,34,93.2,0" TextWrapping="Wrap" Text="" Name="TbSourceDirectory" VerticalAlignment="Top"/>
+        <Button Name="BtnBrowseSource" Content="Browse" HorizontalAlignment="Right" Margin="0,37,13.2,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseSource_Click"/>
         <Label Content="Destination : " HorizontalAlignment="Left" Margin="23,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.633,-5.381"/>
-        <TextBox Height="23" Margin="108,74,136.6,0" TextWrapping="Wrap" Text="" Name="TbDestinationDirectory" VerticalAlignment="Top"/>
-        <Button Name="BtnBrowseDes" Content="Browse" HorizontalAlignment="Left" Margin="675,77,0,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseDes_Click"/>
-        <Button Content="Start" HorizontalAlignment="Left" Margin="675,122,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
+        <TextBox Height="23" Margin="108,74,93.2,0" TextWrapping="Wrap" Text="" Name="TbDestinationDirectory" VerticalAlignment="Top"/>
+        <Button Name="BtnBrowseDes" Content="Browse" HorizontalAlignment="Right" Margin="0,77,13.2,0" VerticalAlignment="Top" Width="75" Click="BtnBrowseDes_Click"/>
+        <Button Content="Start" Margin="23,122,13.2,0" VerticalAlignment="Top" Height="37" Click="Button_Click" Foreground="#FF0064F6" FontSize="22" FontWeight="Bold"/>
         <ProgressBar Height="20" Margin="13,226,9.6,0" VerticalAlignment="Top" Name="Pb1" RenderTransformOrigin="0.5,0.5">
             <ProgressBar.RenderTransform>
                 <TransformGroup>

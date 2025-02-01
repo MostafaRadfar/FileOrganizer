@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Arash;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace FileOrganizer
 {
@@ -37,6 +38,27 @@ namespace FileOrganizer
 
         }
 
+        private static Regex r = new Regex(":");
+        public static DateTime? GetDateTakenFromImage(string path)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+                using (System.Drawing.Image myImage = System.Drawing.Image.FromStream(fs, false, false))
+                {
+                    var propItem = myImage.GetPropertyItem(36867);
+                    string dateTaken = r.Replace(Encoding.UTF8.GetString(propItem.Value), "-", 2);
+                    return DateTime.Parse(dateTaken);
+                }
+            }
+            catch (Exception a)
+            {
+
+                return null;
+            }
+           
+        }
+
         private void OrganizeFiles(string sourceDir,string DesDir)
         {
             try
@@ -57,8 +79,11 @@ namespace FileOrganizer
                 foreach (var file in files)
                 {
                     var info = new FileInfo(file);
-                    var dateModified = info.LastWriteTime;
-                    var persinmodifdate = new PersianDate(dateModified);
+
+                    var dateModified = GetDateTakenFromImage(file);
+                    if (dateModified.HasValue == false) dateModified= info.LastWriteTime;
+
+                    var persinmodifdate = new PersianDate(dateModified.Value);
 
 
                     Directory.CreateDirectory(DesDir + "/" + persinmodifdate.Year.ToString() + "/" + persinmodifdate.Month.ToString());
